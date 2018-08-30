@@ -2,18 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .products {
+    h1 {
+      margin-left: 20px;
+    }
+
     table {
       border-collapse: collapse;
+      width: 100%;
+      border: 2px solid #2A324B
     }
   
+    table tr {
+      border: 20px solid white;
+    }
+
     table tr td {
-      padding: 5px;
+      padding: 10px;
       vertical-align: top;
     }
-  
+    
     .list_image {
       width:  60px;
       height: 70px;
+      border: 1px solid white;
     }
   
     .list_description {
@@ -24,7 +35,7 @@
       }
   
       dt {
-        color:        #244;
+        color:        #2A324B;
         font-weight:  bold;
         font-size:    larger;
       }
@@ -41,10 +52,10 @@
     }
   
     .list_line_even {
-      background:   #e0f8f8;
+      background:   #767B91;
     }
   
     .list_line_odd {
-      background:   #f8b0f8;
+      background:   #C7CCDB;
     }
   }
