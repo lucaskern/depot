@@ -61,6 +61,27 @@
    #side {
      padding: 1em 2em;
      background: rgb(32, 65, 95);
+     max-width: 200px;
+
+     form, div {
+       display: inline;
+     }
+
+     input {
+       font-size: large;
+       width: 100%;
+     }
+
+     #cart {
+       font-size: smaller;
+       color: white;
+
+       table {
+         border-top: 1px dotted #595;
+         border-bottom: 1px dotted #595;
+         margin-bottom: 10px;
+       }
+     }
  
      ul {
        padding: 0;

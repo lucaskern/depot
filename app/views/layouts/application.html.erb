@@ -5,7 +5,8 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "application" %>
+
   </head>
 
   <body class='<%= controller.controller_name %>'>
@@ -15,14 +16,22 @@
     </div>
     <div id="columns">
       <div id="side">
+
         <ul>
           <li> <a href="/"> Home </a></li>
           <li> <a href="http://www..../faq"> Questions </a></li>
           <li> <a href="http://www..../news"> News </a></li>
           <li> <a href="http://www..../contact"> Contact </a></li>
           <li> <p> <%= @time %> <p> </li>
-          <li> <p> You have visited <%= @counter %> time(s) </li>
+          <li> <p> You have visited <strong> <%= pluralize(session[:counter].to_s, "time") %> </strong> without selecting an item. If you need assistance please call 1.800.211.1222  <p> </li>
         </ul>
+
+      <% if @cart %>
+        <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+          <%= render @cart %>
+          <% end %>
+        <% end %>
+
       </div>
       <div id="main">
         <%= yield %>
